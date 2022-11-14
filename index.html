@@ -9,11 +9,19 @@
             var text = document.getElementById('text').value;
             var retour = [];
             var delimiteurs = " ";
-            var tok = text.split(' ')[0];
+            var tok = text.split(' ');
 
             console.log(tok);
             alert(tok);
 
+            var text_sortie = "";
+            var phrase = "";
+            var nbPhrase = 0;
+
+            tok.forEach(element =>
+            {
+
+            });
 
             Settlement.implode = function(glue, pieces)
             {
