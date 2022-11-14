@@ -1,27 +1,17 @@
-<form action="" method="POST">
-    @csrf
-    <textarea id="text" name="text"></textarea>
-    <button >Modifier</button>
 
+
+<form action="action.php" method="POST">
+    <textarea id="text" name="text"></textarea>
+    <p><input type="submit" value="OK"></p>
 </form>
 
 
 
-@if(isset($text_sortie))
 <p>
     <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
     <span id="tocopy">{!! $text_sortie !!}</span>
 </p>
-@endif
 
-
-
-@if(isset($strs))
-@foreach($strs as $s)
-{{$s}}
-<br>
-@endforeach
-@endif
 
 <script>
     function click() {
