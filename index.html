@@ -1,11 +1,10 @@
 
 
 
-    <textarea id="text" name="text"></textarea>
-    <p><button onclick="click()" type="submit" value="OK"></button></p>
+    <input id="text" name="text">
+    <p><button onclick="click()" type="submit" value="OK">OK</button></p>
 
-
-
+    -
 
 <p>
     <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
@@ -16,7 +15,7 @@
 <script>
 
     function click() {
-
+        console.log("test");
         console.log(document.getElementById('text').value);
     }
 
