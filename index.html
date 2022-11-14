@@ -1,9 +1,9 @@
 
 
-<form action="action.php" method="POST">
+
     <textarea id="text" name="text"></textarea>
-    <p><input type="submit" value="OK"></p>
-</form>
+    <p><button onclick="click()" type="submit" value="OK"></button></p>
+
 
 
 
@@ -14,8 +14,9 @@
 
 
 <script>
+
     function click() {
-        console.log('ok');
+
         console.log(document.getElementById('text').value);
     }
 
