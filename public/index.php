@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Basic Table - Table">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
 
-    <title>{{ $title ?? 'Administration' }}</title>
-    <link href="{{ asset('monsite/assets/css/app.css') }}" rel="stylesheet">
-
-</head>
 <!-- Possible Body Attributes
     * data-theme-header-fixed = 'true'       - For fixed Header
     * data-theme-header-fixed = 'false'      - For static Header
@@ -25,39 +13,13 @@
 -->
 
 <body>
-<!-- apply javascript before page content be loaded -->
-<script>
-    'use strict';
-    var defaultConfig = {
-        fixedLeftSidebar: true,
-        fixedHeader: false,
-        fixedFooter: false,
-        isShrinked: false,
-        themeColor: 'app-theme-facebook',
-        themeMode: 'default-mode'
-    };
-    var globalConfigs = JSON.parse(localStorage.getItem('ABCADMIN_CONFIG')) || defaultConfig;
-    var appThemeMode = globalConfigs.themeMode;
-    var isShrinked = globalConfigs.isShrinked;
-    var body = document.getElementsByTagName("body")[0];
-    body.setAttribute("data-theme-mode", appThemeMode);
-    body.setAttribute("data-theme-sidebar-shrinked", isShrinked)
-</script>
+
 <div class="page-container">
 
 
-    <x-slot name="fil">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb ps-0 fs-base">
-                <li class="breadcrumb-item"><a href="#">Administration</a></li>
-                <li class="breadcrumb-item"><span>Formulaire</span></li>
-                <li class="breadcrumb-item active" aria-current="page">Injkhvjhdex</li>
-            </ol>
-        </nav>
-    </x-slot>
 
-    <form action="{{ route('form.envoie') }}" method="POST">
-        @csrf
+
+    <form action="" method="POST">
         <textarea id="text" name="text"></textarea>
         <button >Modifier</button>
 
@@ -134,10 +96,6 @@
 </div>
 <!-- end page-container -->
 
-<!-- end right-sidebar -->
-<script src="{{ asset('monsite/assets/js/vendor~app~dashboard_analytics~dashboard_ecommerce~demo_add_product~demo_calendar~demo_datatable~dem~699a60a5.js') }}"></script>
-<script src="{{ asset('monsite/assets/js/vendor~app~demo_form_wizard.js') }}"></script>
-<script src="{{ asset('monsite/assets/js/app.js') }}"></script>
 </body>
 </html>
 
