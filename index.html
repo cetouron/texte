@@ -18,77 +18,25 @@
             var phrase = "";
             var nbPhrase = 0;
 
-            tok.forEach(element =>
+            tok.forEach(mot =>
             {
-
+                if((phrase+" "+mot).length < 24) {
+                    phrase+=" "+mot;
+                }
+                else {
+                    if(nbPhrase == 3) {
+                        text_sortie += phrase+"<br><br>";
+                        nbPhrase = 0;
+                    }
+                    else {
+                        text_sortie += $phrase+"<br>";
+                        nbPhrase++;
+                    }
+                    phrase = mot;
+                }
             });
 
-            Settlement.implode = function(glue, pieces)
-            {
-
-                var	retVal = '';
-                var	tGlue = '';
-                if (arguments.length === 1)
-                {
-                    pieces = glue;
-                    glue = '';
-                }
-                if (typeof pieces === 'object')
-                {
-                    if (Object.prototype.toString.call(pieces) === '[object Array]')
-                    {
-                        return pieces.join(glue);
-                    }
-                    for (const i in pieces)
-                    {
-                        retVal += tGlue + pieces[i];
-                        tGlue = glue;
-                    }
-                    return retVal;
-                }
-                return pieces;
-            }
-// ------------------------
-// Function : default_key
-// This is an alternate function which
-// is find default key of map.
-// We assume that passing parameter is a
-// Object of javascript.
-            Settlement.default_key = function (obj) {
-                var result = 0;
-                Object.entries(obj).map(item => {
-                    // It's not 100 % accurate when
-                    // given key = 1 or key = "1"
-                    // both same in javascript.
-                    // Or key is an string in javascript object.
-                    const num = Number(item[0]);
-                    // Check key is integer and key
-                    // is not less than result
-                    if(Number.isInteger(num) &&
-                        num >= result)
-                    {
-                        // Get new key
-                        result = num + 1;
-                    }
-                })
-                // Important set empty
-                // when access [][]
-                // array of array.
-                obj[result] = {};
-                return result;
-            }
-            Settlement.array_push = function(target,values)
-            {
-                // Assume target is an map
-                // Assume values is collection of new iteam
-                // Add new value into collection
-                for (const value of values) {
-
-                    target[Settlement.default_key(target)] = value
-                }
-                return target.size;
-            }
-
+            alert(text_sortie);
 
         }
 
