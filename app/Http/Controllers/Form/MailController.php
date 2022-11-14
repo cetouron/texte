@@ -90,9 +90,7 @@ class MailController extends Controller
                     }
                     $phrase = $mot;
                 }
-
-           // ddd($retour);
-        }
+            }
 
         return view("form.test", compact("text_sortie"));
     }
