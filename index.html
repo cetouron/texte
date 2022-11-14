@@ -29,7 +29,7 @@
                         nbPhrase = 0;
                     }
                     else {
-                        text_sortie += $phrase+"<br>";
+                        text_sortie += phrase+"<br>";
                         nbPhrase++;
                     }
                     phrase = mot;
@@ -37,6 +37,7 @@
             });
 
             alert(text_sortie);
+            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+text_sortie+"</span>");
 
         }
 
@@ -47,7 +48,8 @@
 <input type = "button" onclick = "myfunction()" value = "Display">
 
 <p>
-    <span id="tocopy">! $text_sortie </span>
+    <div id="ajouttxt"></div>
+<input type="button" value="Copier" class="js-copy" data-target="#tocopy">
 </p>
 
 </body>
