@@ -2,8 +2,10 @@
 <html>
 <head>
     <script type = "text/javascript">
-        function myfunction() {
-            alert("how are you");
+        function click() {
+            console.log("test");
+            console.log(document.getElementById('text').value);
+            alert(document.getElementById('text').value);
         }
     </script>
 </head>
@@ -28,10 +30,7 @@
 
 <script>
 
-    function click() {
-        console.log("test");
-        console.log(document.getElementById('text').value);
-    }
+
 
     var btncopy = document.querySelector('.js-copy');
     if(btncopy) {
