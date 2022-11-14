@@ -1,15 +1,29 @@
 
+<html>
+<head>
+    <script type = "text/javascript">
+        function myfunction() {
+            alert("how are you");
+        }
+    </script>
+</head>
+<body>
+<textarea id="text" name="text"> </textarea>
+<p><a onclick="click()" type="submit">OK</a></p>
 
-
-    <textarea id="text" name="text"> </textarea>
-    <p><a onclick="click()" type="submit">OK</a></p>
-
-    -
+-
 
 <p>
     <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
     <span id="tocopy">{!! $text_sortie !</span>
 </p>
+
+
+<p>Click the following button to see the function in action</p>
+<input type = "button" onclick = "myfunction()" value = "Display">
+</body>
+</html>
+
 
 
 <script>
