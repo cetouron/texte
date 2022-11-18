@@ -11,12 +11,12 @@
             var delimiteurs = " ";
             var tok = text.split(' ');
 
-            console.log(tok);
-            alert(tok);
 
             var text_sortie = "";
             var phrase = "";
             var nbPhrase = 0;
+
+            var nbMot = tok.length();
 
             tok.forEach(mot =>
             {
@@ -36,7 +36,7 @@
                 }
             });
 
-            alert(text_sortie);
+            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', nbMot);
             document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+text_sortie+"</span>");
 
         }
