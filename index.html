@@ -4,7 +4,6 @@
     <script type = "text/javascript">
 
         function myfunction() {
-            alert(document.getElementById('text').value);
 
             var text = document.getElementById('text').value;
             var retour = [];
@@ -36,8 +35,8 @@
                 }
             });
 
-            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+nbMot+"</span>");
             document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+text_sortie+"</span>");
+            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"test\"> Nombre de mots : "+nbMot+"</span>");
 
         }
 
@@ -47,7 +46,7 @@
 <textarea id="text" name="text"> </textarea>
 <input type = "button" onclick = "myfunction()" value = "Display">
 
-<p> b
+<p> c
     <div id="ajouttxt"></div>
 <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
 </p>
