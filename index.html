@@ -16,7 +16,7 @@
             var phrase = "";
             var nbPhrase = 0;
 
-            var nbMot = tok.length();
+            var nbMot = tok.length;
 
             tok.forEach(mot =>
             {
@@ -36,7 +36,7 @@
                 }
             });
 
-            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', nbMot);
+            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+nbMot+"</span>");
             document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+text_sortie+"</span>");
 
         }
@@ -47,7 +47,7 @@
 <textarea id="text" name="text"> </textarea>
 <input type = "button" onclick = "myfunction()" value = "Display">
 
-<p> a
+<p> b
     <div id="ajouttxt"></div>
 <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
 </p>
