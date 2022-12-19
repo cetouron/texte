@@ -13,6 +13,7 @@
 
             var text_sortie = "";
             var phrase = "";
+            var paragraphe = "";
             var nbPhrase = 0;
 
             var nbMot = tok.length;
@@ -24,10 +25,14 @@
                 }
                 else {
                     if(nbPhrase == 3) {
+                        paragraphe += phrase+"<br>";
                         text_sortie += phrase+"<br><br>";
+                        text_sortie +='<input type="button" onclick="fonctionCopier(paragraphe)" value="Copier up"><br><br>';
+                        paragraphe = "";
                         nbPhrase = 0;
                     }
                     else {
+                        paragraphe += phrase+"<br>"
                         text_sortie += phrase+"<br>";
                         nbPhrase++;
                     }
@@ -46,7 +51,7 @@
 <textarea id="text" name="text"> </textarea>
 <input type = "button" onclick = "myfunction()" value = "Display">
 
-<p> d
+<p> e
     <div id="ajouttxt"></div>
 <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
 </p>
@@ -64,6 +69,13 @@
     if(btncopy) {
         btncopy.addEventListener('click', docopy);
     }
+
+
+    function fonctionCopier(para) {
+        navigator.clipboard.writeText(para);
+    }
+
+
 
     function docopy() {
         var range = document.createRange();
