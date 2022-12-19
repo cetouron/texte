@@ -76,7 +76,7 @@ class MailController extends Controller
             $nbPhrase = 0;
             foreach ($retour as $mot) {
 
-                if(strlen($phrase." ".$mot) < 24) {
+                if(strlen($phrase." ".$mot) < 28) {
                     $phrase.=" ".$mot;
                 }
                 else {
