@@ -27,7 +27,7 @@
                     if(nbPhrase == 3) {
                         paragraphe += phrase+"<br>";
                         text_sortie += phrase+"<br><br>";
-                        text_sortie +='<input type="button" onclick="fonctionCopier(\"'+paragraphe+'\")" value="Copier up"><br><br>';
+                        text_sortie +="<input type='button' onclick='fonctionCopier(\""+paragraphe+"\")' value='Copier up'><br><br>";
                         paragraphe = "";
                         nbPhrase = 0;
                     }
@@ -51,7 +51,7 @@
 <textarea id="text" name="text"> </textarea>
 <input type = "button" onclick = "myfunction()" value = "Display">
 
-<p> G
+<p> H
     <div id="ajouttxt"></div>
 <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
 </p>
