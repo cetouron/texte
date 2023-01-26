@@ -20,20 +20,22 @@
 
             tok.forEach(mot =>
             {
-                if((phrase+" "+mot).length < 26) {
-                    phrase+=" "+mot;
+                if((phrase+' '+mot).length < 26) {
+                    phrase+=' '+mot;
                 }
                 else {
                     if(nbPhrase == 3) {
-                        paragraphe += phrase+"<br>";
-                        text_sortie += phrase+"<br><br>";
-                        text_sortie +="<input type='button' onclick=\"fonctionCopier('"+paragraphe+"')\" value='Copier up'><br><br>";
-                        paragraphe = "";
+                        paragraphe += phrase+'<br>';
+                        text_sortie += phrase+'<br><br>';
+                        paragraphe = paragraphe.replaceAll("\n", "");
+                        paragraphe = paragraphe.replaceAll("'", "’");
+                        text_sortie +="<input type=\"button\" onclick=\"fonctionCopier('"+paragraphe+"')\" value=\"Copier up\"><br><br>";
+                        paragraphe = '';
                         nbPhrase = 0;
                     }
                     else {
-                        paragraphe += phrase+"<br>"
-                        text_sortie += phrase+"<br>";
+                        paragraphe += phrase+'<br>';
+                        text_sortie += phrase+'<br>';
                         nbPhrase++;
                     }
                     phrase = mot;
@@ -41,7 +43,7 @@
             });
 
             document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"tocopy\">"+text_sortie+"</span> <br>");
-            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"test\"> Nombre de mots : "+nbMot+"</span>");
+            document.getElementById("ajouttxt").insertAdjacentHTML('afterend', "<span id=\"test\"> Nombre de mots : "+nbMot+"</span> <br>");
 
         }
 
@@ -72,7 +74,8 @@
 
 
     function fonctionCopier(para) {
-        para.replaceAll("<br>", "\n");
+
+        para = para.replaceAll("<br>", "\n");
         navigator.clipboard.writeText(para);
     }
 
