@@ -29,6 +29,7 @@
                         text_sortie += phrase+'<br><br>';
                         paragraphe = paragraphe.replaceAll("\n", "");
                         paragraphe = paragraphe.replaceAll("'", "’");
+                        paragraphe = paragraphe.replaceAll("\"", "❞");
                         text_sortie +="<input type=\"button\" onclick=\"fonctionCopier('"+paragraphe+"')\" value=\"Copier up\"><br><br>";
                         paragraphe = '';
                         nbPhrase = 0;
@@ -53,7 +54,7 @@
 <textarea id="text" name="text"> </textarea>
 <input type = "button" onclick = "myfunction()" value = "Display">
 
-<p> M
+<p> N
     <div id="ajouttxt"></div>
 <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
 </p>
